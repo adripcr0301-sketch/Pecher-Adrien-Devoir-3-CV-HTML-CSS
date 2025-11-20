@@ -51,9 +51,13 @@ h1, h2, h3, h4, h5, h6 {
     box-sizing: border-box;
 }
 
+html, body {
+    height: 100%;
+}
+
 body {
     margin: 0;
-    padding: 40px 0;
+    padding: 0;
     font-family: "Raleway", sans-serif;
     background-color: var(--grey-bg);
     color: var(--text-dark);
@@ -107,21 +111,111 @@ body {
 
 .cv-main {
     display: flex;
+    align-items: stretch;
+    flex : 1;
+    min-height: 800px;
 }
 
-/* Colonne gauche */
+    /* Colonne gauche */
 .cv-column-left {
     width: 320px;          /* largeur fixe */
     padding: 30px;
-    background-color: var(--grey-bg); 
+   
+    background-color: var(--grey-light); 
     border-right: 1px solid var(--grey-light);
     flex: 0 0 300px;
+    font-size: 14px;
+    color : var(--text-dark)
 }
+
+/* blocs de la colonne gauche */
+.cv-block {
+    margin-bottom: 30px;
+}
+
+.cv-block-title {
+    font-family: "Lato", sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--primary);
+    margin: 0 0 10px;
+    padding-bottom: 6px;
+    border-bottom: 2px solid var(--grey-light);
+}
+
+/* listes */
+.cv-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.cv-list li {
+    margin-bottom: 4px;
+}
+
+/* Compétences avec étoiles */
+.skills li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6px;
+ 
+}
+
+/* compétences en gras */
+
+.skill-name {
+    font-weight: 700;
+}
+
+.stars {
+    color: var(--primary); 
+    font-size: 14px;
+    letter-spacing: 2px;
+}
+
+/* Petits points turquoise pour  Qualités / Centres d’intérêt */
+.cv-block-list .cv-list li {
+    position: relative;
+    padding-left: 14px;
+    margin-bottom: 4px;
+}
+
+.cv-block-list .cv-list li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.6em;
+    transform: translateY(-50%);
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: var(--primary);
+}
+
+/* langues en deux colonnes */
+
+.languages li {
+    display: flex;
+    justify-content: space-between;
+}
+
+.lang-name {
+    font-weight: 700; 
+    
+}
+
+.lang-level {
+    font-weight: 400;
+}
+
 
 /* Colonne droite */
 .cv-column-right {
     flex: 1;         
-    background-color: var(--white);      
+    background-color: var(--white); 
+         
     padding: 30px 40px;
 }
 
@@ -144,7 +238,7 @@ h2, h3 {
     color: var(--white);
     text-align: center;
     padding: 20px 0;
-    margin-top: 40px;
+    margin-top: 0;
 }
 
 .footer-links {
