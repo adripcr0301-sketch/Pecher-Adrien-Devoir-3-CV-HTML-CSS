@@ -1,0 +1,33 @@
+/* Raleway – normal */
+@font-face {
+    font-family: "Raleway";
+    src: url("../fonts/Raleway-Regular.ttf") format("woff2");
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* Raleway – gras */
+@font-face {
+    font-family: "Raleway";
+    src: url("../fonts/Raleway-Bold.ttf") format("woff2");
+    font-weight: 700;
+    font-style: normal;
+}
+
+/* Raleway – italique */
+@font-face {
+    font-family: "Raleway";
+    src: url("../fonts/Raleway-Italic.ttf") format("woff2");
+    font-weight: 400;
+    font-style: italic;
+}
+
+/* Police par défaut pour les contenus */
+body {
+    font-family: "Raleway", sans-serif;
+}
+
+/* Police pour les titres */
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Lato", sans-serif;
+}
