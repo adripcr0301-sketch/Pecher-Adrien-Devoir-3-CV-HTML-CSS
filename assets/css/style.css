@@ -64,6 +64,74 @@ body {
 
 }
 
+
+
+                    /* EFFETS VISUELS (a voir avec la section cv-timeline plus bas)  */
+
+
+
+
+
+/*legere transition*/
+a,
+.cv-timeline li,
+.footer-icon {
+    transition: all 0.2s ease;
+}
+
+/* interractions au survol */
+
+.cv-timeline li:hover {
+    background-color:var(--grey-light);
+    cursor: default;
+}
+
+.cv-header-contact a:hover {
+    text-decoration: underline;
+}
+
+.footer-icon:hover {
+    opacity: 0.6;
+    transform: translateY(-2px);
+}
+
+.cv-column-right a:hover {
+    color: var(--primary);
+    text-decoration: underline;
+}
+
+/* Ici on on utilisera un pseudo-élément before pour "tricher" et afficher la barre seulement au survol. */
+
+.cv-timeline li::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;                     /* épaisseur du trait */
+    height: 0;                      /* invisible au repos */
+    background-color: var(--primary);
+    transition: height 0.2s ease;
+}
+
+.cv-timeline li:hover::before {
+    height: 100%;                   /* le trait apparaît sur toute la hauteur */
+}
+
+/* Photo de profil cliquable et lien vers la photo ( on modifie aussi .cv-photo plus bas )*/
+
+.cv-header-left a {
+    display: inline-block;
+}
+
+
+
+.cv-photo:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.25);
+}
+
+
+
 /*  conteneur principal */ 
 .cv {
     width: 1160px;
@@ -89,7 +157,10 @@ body {
     width: 120px;
     height: 120px;
     border-radius: 50%;
-    border: 4px solid white;
+    border: 4px solid #ffffff;
+    object-fit: cover;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: zoom-in;   /* pointeur de zoom */
 }
 
 .cv-header-center {
