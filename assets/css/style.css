@@ -1,3 +1,14 @@
+/* déclaration palette de couleur */
+
+:root {
+    --primary: #17abb3;
+    --text-dark: #333333;
+    --grey-light: #e3e3e3;
+    --grey-bg: #f5f5f5;
+    --white: #ffffff;
+}
+
+
 /* Raleway – normal */
 @font-face {
     font-family: "Raleway";
@@ -30,4 +41,130 @@ body {
 /* Police pour les titres */
 h1, h2, h3, h4, h5, h6 {
     font-family: "Lato", sans-serif;
+}
+
+/* base générale */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 40px 0;
+    font-family: "Raleway", sans-serif;
+    background-color: var(--grey-bg);
+    color: var(--text-dark);
+
+}
+
+/*  conteneur principal */ 
+.cv {
+    width: 1160px;
+    margin: 0 auto;
+    background-color: var(--white);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* en-tête */
+
+.cv-header {
+    display: flex;
+    padding: 40px;
+    background-color: var(--primary);
+    color: var(--white);
+    align-items: center;
+
+}
+
+.cv-header-left {
+    margin-right: 40px;
+}
+
+.cv-photo {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    border: 4px solid var(--white);
+    object-fit: cover;
+}
+
+.cv-header-right h1 {
+    margin: 0 0 10px;
+    font-family: "Lato", sans-serif;
+}
+
+.cv-header-right h2 {
+    margin: 0 0 20px;
+    font-weight: 400;
+}
+
+/* deux colonnes principales */
+
+.cv-main {
+    display: flex;
+}
+
+/* Colonne gauche */
+.cv-column-left {
+    width: 320px;          /* largeur fixe */
+    padding: 30px;
+    background-color: var(--grey-bg); 
+    border-right: 1px solid var(--grey-light);
+    flex: 0 0 300px;
+}
+
+/* Colonne droite */
+.cv-column-right {
+    flex: 1;         
+    background-color: var(--white);      
+    padding: 30px 40px;
+}
+
+/* titres en couleurs de sections, séparateurs */
+
+h2, h3 {
+    color: var(--primary);
+}
+
+.separator {
+    height: 1px;
+    background-color: var(--grey-light);
+    margin: 15px 0;
+}
+
+/* ajout du style de "footer" */
+
+.cv-footer {
+    background-color: var(--primary); /* couleur principale */
+    color: var(--white);
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+}
+
+.footer-links {
+    margin-bottom: 10px;
+}
+
+.footer-links img {
+    width: 22px;
+    height: 22px;
+    margin: 0 10px;
+    vertical-align: middle;
+    opacity: 0.9;
+    transition: opacity 0.2s;
+}
+
+.footer-links img:hover {
+    opacity: 0.6;
+}
+
+.footer-date {
+    font-size: 14px;
+    margin: 0;
 }
